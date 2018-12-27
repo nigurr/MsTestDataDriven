@@ -28,6 +28,8 @@ steps:
     configuration: '$(buildConfiguration)'
     restoreNugetPackages: true
 
+- powershell: Add-OdbcDsn -Name "ExcelFiles" -DriverName "Driver do Microsoft Excel(*.xls)" -DsnType "User" -Platform "32-bit"
+
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
